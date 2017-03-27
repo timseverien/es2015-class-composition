@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "test": "ava --no-cache"
+  },
+  "devDependencies": {
+    "ava": "^0.18.2"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@ava/stage-4"
+    ]
+  }
+}
