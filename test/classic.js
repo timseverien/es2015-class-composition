@@ -16,9 +16,8 @@ test('Classic', t => {
   t.true(typeof cat.methodA === 'function');
   t.is(cat.methodA(), 'Cat.methodA');
 
-  // Unlike other tests, methodB should return Animal.methodB, as methodB isn’t defined in Hostile, to demonstrate composition.
-  t.true(typeof cat.methodB === 'function');
-  t.is(cat.methodB(), 'Animal.methodB');
+  // Because Hostile doesn’t have methodB(), and prototypes only allow one base class, cat.methodB() is undefined
+  t.false(typeof cat.methodB === 'function');
 
   t.true(typeof cat.methodC === 'function');
   t.is(cat.methodC(), 'Cat.methodC');
